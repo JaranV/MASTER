@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_1\" | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"Dir\"}else{\"File\"}}})",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\jaran\" -Directory)",
+      "Bash(Select-Object Name)",
+      "PowerShell(ls \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\\" | Where-Object { $_.Name -match \"^AI_\" })",
+      "PowerShell($lines = Get-Content \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\AgentOps\\\\centralized\\\\audit\\\\centralized.jsonl\"; Write-Output \"TotalLines: $\\($lines.Count\\)\"; $types = @{}; foreach\\($l in $lines\\){ try{ $o = $l | ConvertFrom-Json; $t = $o.type; if\\($types.ContainsKey\\($t\\)\\){ $types[$t] += 1 } else { $types[$t] = 1 } } catch {} }; $types.GetEnumerator\\(\\) | Sort-Object -Property Value -Descending | Format-Table -AutoSize)",
+      "PowerShell($lines = Get-Content \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\AgentOps\\\\centralized\\\\audit\\\\centralized.jsonl\"; $tools = @{}; $agents = @{}; foreach\\($l in $lines\\){ try{ $o = $l | ConvertFrom-Json; if\\($o.type -eq 'tool_call'\\){ $t = $o.tool; if\\($tools.ContainsKey\\($t\\)\\){ $tools[$t] += 1 } else { $tools[$t] = 1 }; $a = $o.agent; if\\($agents.ContainsKey\\($a\\)\\){ $agents[$a] += 1 } else { $agents[$a] = 1 } } } catch {} }; Write-Output \"=== TOOL CALLS BY TOOL ===\"; $tools.GetEnumerator\\(\\) | Sort-Object -Property Value -Descending | Format-Table -AutoSize; Write-Output \"=== TOOL CALLS BY AGENT ===\"; $agents.GetEnumerator\\(\\) | Sort-Object -Property Value -Descending | Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(./mvnw test *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\" -Directory)",
+      "Bash(mvn dependency:resolve -q)",
+      "Bash(mvn dependency:get -Dartifact=org.springframework.boot:spring-boot-starter-parent:4.0.5 -q)",
+      "Bash(mvn compile *)",
+      "Bash(mvn clean *)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_RUN_01\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\" \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_4\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\")",
+      "Bash(Copy-Item \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_RUN_01\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\" \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_1\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\")",
+      "Bash(Copy-Item \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_RUN_01\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\" \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\\\\AI_3\\\\webshop\\\\backend\\\\src\\\\main\\\\resources\\\\postnummer.csv\")",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(git -C \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\" ls-files --others --exclude-standard)",
+      "Bash(git -C \"C:\\\\Users\\\\jaran\\\\UIS-master\\\\MASTER\\\\Code\" ls-files)"
+    ]
+  }
+}

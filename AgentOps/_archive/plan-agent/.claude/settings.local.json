@@ -1,0 +1,13 @@
+{
+  "_comment": "PreToolUse hook blocks plan-handoff writes until PLAN-APPROVED-<session>.ok exists. Turns the L1 plan gate from instruction-following into mechanical enforcement.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "bash ../scripts/check-approval.sh" }
+        ]
+      }
+    ]
+  }
+}

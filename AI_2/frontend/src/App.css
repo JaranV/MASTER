@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 2px solid #0f3460;
+    margin-bottom: 32px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #e94560;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav a {
+    margin-left: 24px;
+    text-decoration: none;
+    color: #a0a0b8;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #e94560;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.product-card {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #0f3460;
+    transition: border-color 0.2s;
+}
+
+.product-card:hover {
+    border-color: #e94560;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.product-card h3 {
+    margin: 14px 0 8px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.product-card p {
+    color: #8888a0;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.product-card .price {
+    font-weight: 700;
+    font-size: 20px;
+    color: #e94560;
+}
+
+.product-card .stock {
+    font-size: 13px;
+    color: #6a6a80;
+    margin-top: 4px;
+}
+
+button {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #c73652;
+}
+
+button:disabled {
+    background: #4a4a5e;
+    cursor: not-allowed;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #16213e;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #0f3460;
+}
+
+.cart-item strong {
+    color: #ffffff;
+}
+
+.cart-item div {
+    color: #a0a0b8;
+}
+
+.btn-remove {
+    width: auto;
+    background: transparent;
+    border: 1px solid #e94560;
+    color: #e94560;
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.btn-remove:hover {
+    background: #e94560;
+    color: white;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 22px;
+    padding: 24px 0;
+    color: #ffffff;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.checkout-total {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+form {
+    background: #16213e;
+    padding: 28px;
+    border-radius: 4px;
+    max-width: 450px;
+    border: 1px solid #0f3460;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #a0a0b8;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #0f3460;
+    border-radius: 4px;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #e94560;
+}
+
+.confirmation {
+    text-align: center;
+    padding: 60px 40px;
+    background: #16213e;
+    border-radius: 4px;
+    border: 1px solid #0f3460;
+}
+
+.confirmation h2 {
+    color: #4caf50;
+    font-size: 28px;
+}
+
+.confirmation p {
+    color: #a0a0b8;
+    margin: 16px 0 24px;
+    font-size: 16px;
+}
+
+.confirmation a {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.confirmation a:hover {
+    text-decoration: underline;
+}
+
+.empty-message {
+    color: #a0a0b8;
+    padding: 40px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.empty-message a {
+    color: #e94560;
+    text-decoration: none;
+}

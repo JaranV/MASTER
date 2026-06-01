@@ -1,0 +1,33 @@
+{
+  "_comment": "Mechanical enforcement of test immutability. The code-agent cannot write any file matching common test-path or test-filename patterns; this turns the framework's test-immutability principle from policy into infrastructure. See HITLframework.tex for the rationale and Q14 survey quote.",
+  "permissions": {
+    "deny": [
+      "Write(**/test/**)",
+      "Write(**/tests/**)",
+      "Write(**/__tests__/**)",
+      "Write(**/src/test/**)",
+      "Write(**/*.test.ts)",
+      "Write(**/*.test.tsx)",
+      "Write(**/*.test.js)",
+      "Write(**/*.test.jsx)",
+      "Write(**/*.spec.ts)",
+      "Write(**/*.spec.tsx)",
+      "Write(**/*Test.java)",
+      "Write(**/*Tests.java)",
+      "Write(**/*IT.java)",
+      "Edit(**/test/**)",
+      "Edit(**/tests/**)",
+      "Edit(**/__tests__/**)",
+      "Edit(**/src/test/**)",
+      "Edit(**/*.test.ts)",
+      "Edit(**/*.test.tsx)",
+      "Edit(**/*.test.js)",
+      "Edit(**/*.test.jsx)",
+      "Edit(**/*.spec.ts)",
+      "Edit(**/*.spec.tsx)",
+      "Edit(**/*Test.java)",
+      "Edit(**/*Tests.java)",
+      "Edit(**/*IT.java)"
+    ]
+  }
+}

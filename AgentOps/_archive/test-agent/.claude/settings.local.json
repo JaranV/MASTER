@@ -1,0 +1,9 @@
+{
+  "_comment": "Symmetric enforcement: the test-agent owns tests but cannot modify backend implementation source. Frontend source uses convention; mechanical deny for the React/Vite tree is too brittle (tests live alongside source by Vitest convention). The reviewer + critic-agent cover the frontend gap.",
+  "permissions": {
+    "deny": [
+      "Write(**/src/main/**)",
+      "Edit(**/src/main/**)"
+    ]
+  }
+}

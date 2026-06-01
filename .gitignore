@@ -1,0 +1,38 @@
+# Dependencies
+**/node_modules/
+
+# Build output
+**/target/
+**/build/
+
+# H2 database files (per-variant local data)
+**/data/
+*.mv.db
+*.trace.db
+
+# IDE
+**/.vscode/
+**/.idea/
+*.iml
+
+# Claude Code local settings (machine-specific allowed-command lists)
+**/.claude/settings.local.json
+
+# Environment / secrets
+**/.env
+**/.env.*
+**/application.properties
+**/application-*.properties
+**/application.yml
+**/application-*.yml
+**/application.yaml
+**/application-*.yaml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+shared/tests/api/node_modules

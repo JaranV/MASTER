@@ -1,0 +1,13 @@
+{
+  "_comment": "PreToolUse hook blocks deploy-pattern Bash commands until DEPLOY-APPROVED-<session>.ok exists. Non-deploy Bash (cat, ls, mvn package, etc.) still runs freely so the agent can prepare the deploy plan; only the actual deploy actions are gated.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "bash ../scripts/check-approval.sh" }
+        ]
+      }
+    ]
+  }
+}

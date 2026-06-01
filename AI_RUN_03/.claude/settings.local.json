@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Edit(SESSION_LOG.md)",
+      "Write(SESSION_LOG.md)",
+      "Bash(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Monitor(*)",
+      "TaskCreate(*)",
+      "TaskUpdate(*)",
+      "TaskGet(*)",
+      "TaskList(*)",
+      "TaskOutput(*)",
+      "TaskStop(*)"
+    ],
+    "deny": [
+      "Read(../**)",
+      "Edit(../**)",
+      "Write(../**)",
+      "Read(//**)",
+      "Edit(//**)",
+      "Write(//**)",
+      "Bash(cd ..*)",
+      "Bash(cd /*)",
+      "Bash(cat ../**)",
+      "Bash(cat /*)",
+      "Bash(ls ../**)",
+      "Bash(ls /*)",
+      "Bash(find ../**)",
+      "Bash(find /*)",
+      "Bash(grep * ../**)",
+      "Bash(rg * ../**)"
+    ]
+  }
+}

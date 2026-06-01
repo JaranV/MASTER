@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eee;
+  color: #222;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #999;
+  margin-bottom: 15px;
+}
+
+.topbar h1 {
+  font-size: 22px;
+}
+
+.links a {
+  margin-left: 15px;
+  color: #0066cc;
+}
+
+.item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.item-box {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 12px;
+  width: 230px;
+}
+
+.item-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.item-box h3 {
+  margin: 8px 0 4px;
+  font-size: 16px;
+}
+
+.item-box p {
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.pricetag {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+button:hover {
+  background: #004499;
+}
+
+.basket-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  background: white;
+}
+
+.basket-table th, .basket-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.basket-table th {
+  background: #eee;
+}
+
+.remove-btn {
+  background: #cc0000;
+  width: auto;
+  padding: 4px 10px;
+  margin: 0;
+}
+
+.basket-sum {
+  text-align: right;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.checkout-page {
+  max-width: 500px;
+}
+
+.price-summary {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.discount-text {
+  color: green;
+}
+
+.error-text {
+  color: red;
+}
+
+.checkout-form {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+}
+
+.field small {
+  font-size: 12px;
+}
+
+.low-stock {
+  color: orange;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.done-box {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.done-box h2 {
+  color: green;
+}

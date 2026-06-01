@@ -1,0 +1,102 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Write(**/target/PLAN.md)",
+      "Edit(**/target/PLAN.md)",
+      "Write(**/audit/**)",
+      "Edit(**/audit/**)",
+      "Write(**/messages/**)",
+      "Bash(./mvnw compile*)",
+      "Bash(./mvnw package*)",
+      "Bash(./mvnw test*)",
+      "Bash(npm install*)",
+      "Bash(npm run build*)",
+      "Bash(npm test*)",
+      "Bash(npm run test*)",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(test -f*)",
+      "Bash(bash .claude/scripts/check-approval.sh*)",
+      "Bash(bash ../../shared/scripts/log-execution.sh*)",
+      "Bash(bash ../../shared/scripts/session-recap.sh*)",
+      "Bash(bash ../../shared/scripts/log-prompt.sh*)",
+      "Task(*)",
+      "Bash(mvn --version)",
+      "Bash(mvn -N wrapper:wrapper -Dmaven=3.9.12)",
+      "Bash(curl -s \"https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.0.0-SNAPSHOT/maven-metadata.xml\")",
+      "Bash(curl -s \"https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/\")",
+      "Bash(jar -tf ~/.m2/repository/com/stripe/stripe-java/22.29.0/stripe-java-22.29.0.jar)",
+      "Bash(jar -tf /c/Users/jaran/.m2/repository/com/stripe/stripe-java/22.29.0/stripe-java-22.29.0.jar)",
+      "Bash(\"/c/Program Files/Eclipse Adoptium/jdk-21.0.7.6-hotspot/bin/jar\" -tf /c/Users/jaran/.m2/repository/com/stripe/stripe-java/22.29.0/stripe-java-22.29.0.jar)",
+      "Bash(java -version)",
+      "Bash(java -jar /c/Users/jaran/.m2/repository/com/stripe/stripe-java/29.5.0/stripe-java-29.5.0.jar)",
+      "Bash(powershell *)",
+      "Bash(npm --version)",
+      "Bash(cat)",
+      "Bash(groovy /tmp/TestHash.groovy)",
+      "Bash(mkdir -p /tmp/stripe_extract)",
+      "Bash(python3 -c ' *)",
+      "Bash(./mvnw -q compile exec:java -Dexec.mainClass=\"com.webshop.HashGen\")"
+    ],
+    "deny": [
+      "Write(**/target/backend/src/main/**)",
+      "Write(**/target/frontend/src/**)",
+      "Edit(**/target/backend/src/main/**)",
+      "Edit(**/target/frontend/src/**)",
+      "Write(**/target/tests/**)",
+      "Write(**/target/backend/src/test/**)",
+      "Edit(**/target/tests/**)",
+      "Edit(**/target/backend/src/test/**)",
+      "Write(**/PLAN-APPROVED.ok)",
+      "Edit(**/PLAN-APPROVED.ok)",
+      "Bash(touch *PLAN-APPROVED*)",
+      "Bash(touch */PLAN-APPROVED*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-approval.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ../../shared/scripts/log-prompt.sh orchestrator ../audit/centralized.jsonl"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ../../shared/scripts/log-execution.sh orchestrator ../audit/centralized.jsonl"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ../../shared/scripts/session-recap.sh orchestrator ../audit/centralized.jsonl"
+          }
+        ]
+      }
+    ]
+  }
+}
